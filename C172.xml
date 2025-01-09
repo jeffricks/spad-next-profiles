@@ -1,0 +1,1805 @@
+<Profile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2" xmlns="http://www.fsgs.com/SPAD">
+  <Variables>
+    <Variable Name="PROFILE:GPS_SELECTED" Value="1" ValueType="Decimal" />
+    <Variable Name="PROFILE:AP_MODE" Value="6" ValueType="Decimal" />
+    <Variable Name="PROFILE:XPNDR_DIGIT" Value="1" ValueType="Decimal" />
+    <Variable Name="PROFILE:HDG_ALT_MODE" Value="0" ValueType="String" />
+  </Variables>
+  <Devices>
+    <Device VendorID="0x1DD2" ProductID="0x2010" DevicePath="\\?\hid#vid_1dd2&amp;pid_2010#8&amp;385716d8&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="BUTTON_64">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:GPS_SELECTED" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:GPS_SELECTED" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_63">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:COM1_RADIO_SWAP" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_SWAP" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_61">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_SWAP" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_SWAP" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_62">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_CDI_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_CDI_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_60">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_OBS_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_OBS_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_50">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_MSG_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_MSG_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_58">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_55">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_VNAV_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_53">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_PROC_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_PROC_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_42">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_LeftSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_LeftSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_41">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_LeftSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_LeftSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_40">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_LeftLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_LeftLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_39">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_LeftLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_LeftLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_38">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_LeftSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_LeftSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_2">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RightLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_1">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RightLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_5">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RightSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RightSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RightSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_51">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_ENT_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_52">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_CLR_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_CLR_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESSLONG">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_CLR_Push_Long" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESSLONG">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_CLR_Push_Long" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_54">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_MENU_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_MENU_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_56">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_DirectTo_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_DirectTo_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_59">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RNG_Dezoom" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RNG_Dezoom" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_57">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RNG_Zoom" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS430_RNG_Zoom" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:ELEVATOR TRIM POSITION,DEGREES" Value="0.1" ValueOperation="Increment" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_23">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_ON" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_OFF" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_31">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:GENERAL ENG FUEL PUMP ON:1" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:GENERAL ENG FUEL PUMP ON:1" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_30">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:BEACON_LIGHTS_ON" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:BEACON_LIGHTS_OFF" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_29">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:LANDING_LIGHTS_ON" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:LANDING_LIGHTS_OFF" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_25">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:TAXI_LIGHTS_ON" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:TAXI_LIGHTS_OFF" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_21">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:NAV_LIGHTS_ON" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:NAV_LIGHTS_OFF" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_24">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:STROBES_ON" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:STROBES_OFF" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_32">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:ELECTRICAL MASTER BATTERY" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:ELECTRICAL MASTER BATTERY" Value="0" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:GENERAL ENG MASTER ALTERNATOR:1" Value="0" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:GENERAL ENG MASTER ALTERNATOR:1" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_22">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AVIONICS MASTER SWITCH" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AVIONICS MASTER SWITCH" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_28">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PARKING_BRAKE_SET">
+                    <Parameter Value="1" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PARKING_BRAKE_SET" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_26">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:FLAPS_INCR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_27">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:FLAPS_DECR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:MAGNETO1_INCR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_10">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:MAGNETO_DECR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_47">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="1" />
+                  <EventActionDelay Delay="100" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="0" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:1" Value="1" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:1" Value="10" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:2" Value="1" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:2" Value="10" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_48">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="1" />
+                  <EventActionDelay Delay="100" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="0" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:1" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:1" Value="10" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:2" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:GPS_SELECTED" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:NAV OBS:2" Value="10" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_45">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:HDG_ALT_MODE" Value="0" ValueOperation="ToggleBit" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="Altimeter Setting" Voice="Microsoft Zira Desktop" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="Heading Bug" Voice="Microsoft Zira Desktop" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_35">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="5" ConditionValueSource="LOCAL:AP_SELECTED_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_ALT_VAR_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="6" ConditionValueSource="LOCAL:AP_SELECTED_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_UP" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_36">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="5" ConditionValueSource="LOCAL:AP_SELECTED_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_ALT_VAR_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="6" ConditionValueSource="LOCAL:AP_SELECTED_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_DN" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_37">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_AP" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:AP_SELECTED_MODE" Value="1" />
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_HDG" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="5" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:AP_SELECTED_MODE" Value="5" />
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_ALT" />
+                  <EventActionText2Speech Text="ALT" Voice="Microsoft Zira Desktop" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="6" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:AP_SELECTED_MODE" Value="6" />
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_ALT" />
+                  <EventActionText2Speech Text="VS" Voice="Microsoft Zira Desktop" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:AP_SELECTED_MODE" Value="2" />
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_NAV" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_33">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:AP_MODE" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="6" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                  <EventActionDelay Delay="100" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP None" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Heading" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Naav" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Approach" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="4" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Backcourse" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="5" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Altitude" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="6" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Vertical Speed" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_34">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:AP_MODE" Value="1" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="6" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                  <EventActionDelay Delay="100" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP None" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Heading" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Naav" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Approach" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="4" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Backcourse" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="5" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Altitude" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="6" ConditionValueSource="PROFILE:AP_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="AP Vertical Speed" Voice="Microsoft Zira Desktop" StopAll="true" Volume="50" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_43">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS" Priority="1">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="1" />
+                  <EventActionDelay Delay="100" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="0" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" Value="1" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" Value="10" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_DEC">
+                    <Parameter Value="0.05" />
+                  </EventActionControl>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_DEC">
+                    <Parameter Value="0.25" />
+                  </EventActionControl>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_44">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS" Priority="1">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="1" />
+                  <EventActionDelay Delay="100" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:ACCEL_FLAG" Value="0" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" Value="10" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMIN" Value="1" />
+                      <Option Key="VALUEMAX" Value="360" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_INC">
+                    <Parameter Value="0.05" />
+                  </EventActionControl>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" EnableAcceleration="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:ACCEL_FLAG" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:HDG_ALT_MODE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_INC">
+                    <Parameter Value="0.25" />
+                  </EventActionControl>
+                </EventActions>
+                <Options>
+                  <Option Key="ACCEL_THRESHOLD" Value="2" />
+                  <Option Key="ACCEL_MULTIPLIER" Value="20" />
+                  <Option Key="ACCEL_MAX" Value="100" />
+                </Options>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_6">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="B:FUEL_Cutoff_1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:TOGGLE_FUEL_VALVE_ENG1">
+                    <Parameter Value="1" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="B:FUEL_Cutoff_1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:TOGGLE_FUEL_VALVE_ENG1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_17">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:ELEVATOR TRIM POSITION,DEGREES" Value="0.1" ValueOperation="Decrement" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_12">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="4" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="MSFS:TRANSPONDER STATE:1" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="4" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="4" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="MSFS:TRANSPONDER STATE:1" Value="1" ValueOperation="Decrement">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="4" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESSLONG">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="Squawk V F R" Voice="Microsoft Zira Desktop" Volume="50" />
+                  <EventActionControl TargetDataDefinition="MSFS:TransponderVFR" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:XPNDR_DIGIT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:XPNDR_DIGIT" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="5" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESSLONG">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="Ident" Voice="Microsoft Zira Desktop" Volume="50" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_IDENT_ON" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:XPNDR_DIGIT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+        <Extensions />
+      </DevicePage>
+      <Events />
+      <Options>
+        <Option Key="BUTTON_1.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_2.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_4.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_5.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_9.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_10.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_58.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_59.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_61.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_62.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_63.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_64.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_12.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_13.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_14.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_15.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_17.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_18.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_19.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_20.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_46.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_47.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_44.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_45.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_41.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_42.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_54.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_55.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_52.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_53.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_51.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_50.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_49.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_48.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_38.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_39.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_22.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_23.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_25.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_24.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_27.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_28.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_29.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_30.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_7.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_6.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_56.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_57.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_32.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_33.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_35.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_36.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_8.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_3.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_11.InputModifier" Value="Repeat" />
+        <Option Key="BUTTON_34.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_37.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_40.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_43.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_21.InputModifier" Value="ShortPress" />
+        <Option Key="BUTTON_26.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_31.InputModifier" Value="Pulse" />
+        <Option Key="BUTTON_16.InputModifier" Value="Repeat" />
+      </Options>
+      <Extensions />
+    </Device>
+    <Device VendorID="0x068E" ProductID="0x00FF" DevicePath="\\?\hid#vid_068e&amp;pid_00ff#b&amp;1418165e&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:KAP140_Push_AP" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:EYEPOINT_RESET" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_2">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:SELECTED_RADIO" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:NAVCOM_AUDIO_COM2_Receive">
+                    <Parameter Value="1" />
+                  </EventActionControl>
+                  <EventActionControl TargetDataDefinition="B:NAVCOM_AUDIO_COM1_Receive" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:SELECTED_RADIO" Value="1">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="2" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:SELECTED_RADIO" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:NAVCOM_AUDIO_COM1_Receive">
+                    <Parameter Value="1" />
+                  </EventActionControl>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:SELECTED_RADIO" Value="2">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="2" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS" IsFinal="true">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="LOCAL:SELECTED_RADIO" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:NAVCOM_AUDIO_COM2_Receive" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:SELECTED_RADIO" Value="0">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="2" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+        <Extensions />
+      </DevicePage>
+      <Events />
+      <Extensions />
+    </Device>
+    <Device VendorID="0x2355" ProductID="0x8050" DevicePath="\\?\hid#vid_2355&amp;pid_8050&amp;mi_02#9&amp;35cf6a9d&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="THROTTLE">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_NOREVERSE_THROTTLE">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="OPTION1" Value="True" />
+                      <Option Key="MAX" Value="15887" />
+                      <Option Key="MAXTO" Value="16335" />
+                      <Option Key="IDLE" Value="64" />
+                      <Option Key="IDLETO" Value="0" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BRAKE">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_MIXTURE">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MAX" Value="16015" />
+                      <Option Key="MAXTO" Value="16335" />
+                      <Option Key="MIN" Value="64" />
+                      <Option Key="MINTO" Value="0" />
+                      <Option Key="OPTION1" Value="True" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+            <Options>
+              <Option Key="NAME" Value="Mixture" />
+            </Options>
+          </Event>
+        </Events>
+        <Extensions />
+      </DevicePage>
+      <Events />
+      <DeviceCalibration VendorID="0x2355" ProductID="0x8050" Version="2">
+        <Axes>
+          <AxisCalibration Name="Throttle" DisplayName="Throttle" Minimum="0" Maximum="16335" Deadzone="3" Smoothness="0" MinimumDelta="65" />
+          <AxisCalibration Name="Brake" DisplayName="Brake" Minimum="0" Maximum="16335" Deadzone="3" Smoothness="0" MinimumDelta="65" />
+        </Axes>
+      </DeviceCalibration>
+      <Extensions />
+    </Device>
+    <Device VendorID="0x068E" ProductID="0x00F2" DevicePath="\\?\hid#vid_068e&amp;pid_00f2#b&amp;6e839eb&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_BRAKERIGHT">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MIN" Value="0" />
+                      <Option Key="MINTO" Value="30" />
+                      <Option Key="MAX" Value="200" />
+                      <Option Key="MAXTO" Value="255" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_BRAKELEFT">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MIN" Value="0" />
+                      <Option Key="MINTO" Value="30" />
+                      <Option Key="MAX" Value="200" />
+                      <Option Key="MAXTO" Value="255" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Z_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_RUDDER">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MAX" Value="240" />
+                      <Option Key="MAXTO" Value="255" />
+                      <Option Key="IDLE" Value="100" />
+                      <Option Key="IDLETO" Value="154" />
+                      <Option Key="MIN" Value="0" />
+                      <Option Key="MINTO" Value="15" />
+                      <Option Key="INVERTAXIS" Value="True" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+        <Extensions />
+      </DevicePage>
+      <Events />
+      <DeviceCalibration VendorID="0x068E" ProductID="0x00F2" Version="2">
+        <Axes>
+          <AxisCalibration Name="Z Axis" DisplayName="Z Axis" Minimum="0" Maximum="252" Deadzone="3" Smoothness="0" MinimumDelta="1">
+            <AxisCurvePoints>
+              <AxisCurvePoint X="0" Y="0" />
+              <AxisCurvePoint X="0.12558643089137494" Y="0.37025561580170419" />
+              <AxisCurvePoint X="0.887766149404547" Y="0.63439194422927958" />
+              <AxisCurvePoint X="1" Y="1" />
+            </AxisCurvePoints>
+          </AxisCalibration>
+          <AxisCalibration Name="Y Axis" DisplayName="Y Axis" Minimum="0" Maximum="255" Deadzone="3" Smoothness="0" MinimumDelta="1" />
+          <AxisCalibration Name="X Axis" DisplayName="X Axis" Minimum="19" Maximum="249" Deadzone="3" Smoothness="0" MinimumDelta="1" />
+        </Axes>
+      </DeviceCalibration>
+      <Extensions />
+    </Device>
+  </Devices>
+  <Options>
+    <Option Key="Saitek.BIP.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.BIP.Brightness" Value="50" />
+    <Option Key="Saitek.FIP.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.FIP.DefaultPagingButtons" Value="True" />
+    <Option Key="Saitek.FIP.PagingButtonsOn" Value="True" />
+    <Option Key="Saitek.RadioPanel.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.SwitchPanel.RaiseOnFirst" Value="False" />
+    <Option Key="Saitek.SwitchPanel.SwapRL" Value="True" />
+    <Option Key="Saitek.SwitchPanel.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.TrimWheel.ReverseTrim" Value="True" />
+    <Option Key="Ultimarc.PacDrive.EnableVirtualPower" Value="True" />
+    <Option Key="Ultimarc.PacLed64.EnableVirtualPower" Value="True" />
+    <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
+  </Options>
+  <ProfileInformation ProfileID="ed5c718d-6ec5-45f3-b841-023388a7b33f" Version="0.141">
+    <Author>nhflyer</Author>
+    <Description />
+    <LastChanged>2025-01-09T15:50:13.8086108-05:00</LastChanged>
+  </ProfileInformation>
+</Profile>
