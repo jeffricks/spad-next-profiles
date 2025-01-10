@@ -1,6 +1,6 @@
 <Profile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2" xmlns="http://www.fsgs.com/SPAD">
   <Variables>
-    <Variable Name="PROFILE:GPS_SELECTED" Value="1" ValueType="Decimal" />
+    <Variable Name="PROFILE:GPS_SELECTED" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:AP_MODE" Value="6" ValueType="Decimal" />
     <Variable Name="PROFILE:XPNDR_DIGIT" Value="1" ValueType="Decimal" />
     <Variable Name="PROFILE:HDG_ALT_MODE" Value="0" ValueType="String" />
@@ -1358,11 +1358,39 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:XPNDR_DIGIT" Value="1" ValueOperation="Increment">
+                    <Options>
+                      <Option Key="HASMINMAX" Value="True" />
+                      <Option Key="VALUEMAX" Value="5" />
+                      <Option Key="ROLLOVER" Value="True" />
+                    </Options>
+                  </EventActionChangeValue>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESSLONG">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionText2Speech Text="Ident" Voice="Microsoft Zira Desktop" Volume="50" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_IDENT_ON" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:XPNDR_DIGIT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_12">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_INC" />
@@ -1370,7 +1398,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_INC" />
@@ -1378,7 +1406,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_INC" />
@@ -1386,7 +1414,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="4" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="4" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
@@ -1394,7 +1422,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="MSFS:TRANSPONDER STATE:1" Value="1" ValueOperation="Increment">
@@ -1411,7 +1439,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_DEC" />
@@ -1419,7 +1447,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_DEC" />
@@ -1427,7 +1455,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_DEC" />
@@ -1435,7 +1463,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="4" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="4" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
@@ -1443,7 +1471,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:XPNDR_DIGIT" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="LOCAL:XPNDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="MSFS:TRANSPONDER STATE:1" Value="1" ValueOperation="Decrement">
@@ -1465,35 +1493,7 @@
                 <EventActions>
                   <EventActionText2Speech Text="Squawk V F R" Voice="Microsoft Zira Desktop" Volume="50" />
                   <EventActionControl TargetDataDefinition="MSFS:TransponderVFR" />
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:XPNDR_DIGIT" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_13">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:XPNDR_DIGIT" Value="1" ValueOperation="Increment">
-                    <Options>
-                      <Option Key="HASMINMAX" Value="True" />
-                      <Option Key="VALUEMAX" Value="5" />
-                      <Option Key="ROLLOVER" Value="True" />
-                    </Options>
-                  </EventActionChangeValue>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="PRESSLONG">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="0" ConditionValueSource="MSFS:TRANSPONDER STATE:1" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionText2Speech Text="Ident" Voice="Microsoft Zira Desktop" Volume="50" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_IDENT_ON" />
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:XPNDR_DIGIT" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LOCAL:XPNDR_DIGIT" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1797,9 +1797,9 @@
     <Option Key="Ultimarc.PacLed64.EnableVirtualPower" Value="True" />
     <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
   </Options>
-  <ProfileInformation ProfileID="ed5c718d-6ec5-45f3-b841-023388a7b33f" Version="0.141">
+  <ProfileInformation ProfileID="ed5c718d-6ec5-45f3-b841-023388a7b33f" Version="0.142">
     <Author>nhflyer</Author>
     <Description />
-    <LastChanged>2025-01-09T15:50:13.8086108-05:00</LastChanged>
+    <LastChanged>2025-01-09T19:13:51.2513407-05:00</LastChanged>
   </ProfileInformation>
 </Profile>
